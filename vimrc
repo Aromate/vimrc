@@ -5,7 +5,7 @@ endif
 call plug#begin('~/.vim/.plugged')
 "themes
 Plug 'EdenEast/nightfox.nvim'
-Plug 'bling/vim-bufferline'
+" Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'morhetz/gruvbox'
@@ -86,6 +86,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'chiel92/vim-autoformat'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'github/copilot.vim'
+"Plug 'zbirenbaum/copilot.lua'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
 
@@ -108,5 +109,13 @@ filetype plugin on
 syntax on
 
 for s:path in split(glob('~/.vim/config/*.vim'),"\n")
+  exe 'source ' . s:path
+endfor
+
+for s:path in split(glob('~/.vim/lang/*.vim'),"\n")
+  exe 'source ' . s:path
+endfor
+
+for s:path in split(glob('~/.vim/lua_config/*.lua'),"\n")
   exe 'source ' . s:path
 endfor

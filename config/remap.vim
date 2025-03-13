@@ -1,6 +1,8 @@
 cnoremap w!! w !sudo tee % >/dev/null
+
+" emacs
 cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
+" cnoremap <C-n> <Down> use to snippet forward.
 cnoremap <C-j> <Left>
 cnoremap <C-k> <Right>
 cnoremap <C-b> <S-Left>

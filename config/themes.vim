@@ -2,7 +2,8 @@
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_extensions = ['branch', 'tabline', 'lsp', 'bufferline']
+" can add 'bufferline'
+let g:airline_extensions = ['branch', 'tabline', 'lsp']
 let g:airline_symbols.branch = ''
 let g:airline_symbols.colnr = ' :'
 let g:airline_symbols.maxlinenr = '☰ '
