@@ -26,6 +26,8 @@ Plug 'tpope/vim-fugitive' " Git plugin
 " Plug 'whiteinge/diffconflicts' " A better Vimdiff mergetool
 "Map . command
 Plug 'tpope/vim-repeat'
+"Enhanced % navigation for matching tags, brackets, etc
+Plug 'andymass/vim-matchup'
 "Key maps
 Plug 'tpope/vim-surround' " 范围选择
 Plug 'tommcdo/vim-exchange' " Easy text exchange operator for Vim.
@@ -85,7 +87,7 @@ Plug 'junegunn/fzf.vim'
 "add autoformat
 " Plug 'chiel92/vim-autoformat'
 Plug 'vim-autoformat/vim-autoformat'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 "Plug 'zbirenbaum/copilot.lua'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 " translate
@@ -104,6 +106,7 @@ Plug 'honza/vim-snippets'
 Plug 'prabirshrestha/async.vim'
 Plug 'thomasfaingnaert/vim-lsp-snippets'
 Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 " }}
 
 call plug#end()

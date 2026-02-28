@@ -1,6 +1,12 @@
 " General options {{
+set encoding=utf-8
+scriptencoding utf-8
+
 if !has('nvim')
   set notagbsearch
+  " 禁用终端能力查询，防止在某些终端下乱码
+  set t_RV=
+  set t_u7=
 endif
 "set termguicolors
 "set lazyredraw
@@ -14,7 +20,7 @@ set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set backspace=2
 set autowrite
 set autoread
-set hlsearch
+set nohlsearch
 set incsearch
 set regexpengine=2
 set fileencodings=utf-8,gbk,ucs-bom,cp936

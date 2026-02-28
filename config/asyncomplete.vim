@@ -1,6 +1,16 @@
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" CR: close popup and try to expand snippet
+function! s:expand_snippet_or_cr() abort
+  if pumvisible()
+    call asyncomplete#close_popup()
+    call UltiSnips#ExpandSnippet()
+    return ""
+  endif
+  return "\<CR>"
+endfunction
+inoremap <silent> <CR> <C-R>=<SID>expand_snippet_or_cr()<CR>
 
 imap <c-space> <Plug>(asyncomplete_force_refresh)
 " For Vim 8 (<c-@> corresponds to <c-space>):
@@ -28,6 +38,15 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
       \ 'priority': 9,
       \ 'completor': function('asyncomplete#sources#file#completor')
       \ }))
+
+" UltiSnips completion source
+if has('python3')
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+      \ 'name': 'ultisnips',
+      \ 'allowlist': ['*'],
+      \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+      \ }))
+endif
 
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete

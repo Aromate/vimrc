@@ -9,6 +9,7 @@ if executable('rust-analyzer')
         \       'buildScripts': {
         \         'enable': v:true,
         \       },
+        \       'features': 'all',
         \     },
         \     'rust-analyzer.cargo.runBuildScriptsCommand': [
         \       'cargo',
@@ -20,7 +21,8 @@ if executable('rust-analyzer')
         \       'enable': v:true,
         \     },
         \     'rust-analyzer.disable-cargo-workspace-and-only-use-its-glob-result-as-linkedProjects-input':'true',
-        \     'checkOnSave': {
+        \     'checkOnSave': v:true,
+        \     'check': {
         \       'command': 'clippy',
         \     },
         \   },
